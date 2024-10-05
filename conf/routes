@@ -1,0 +1,25 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           com.ice.metadata.controllers.HomeController.index()
+
+GET     /api/v1/tracks           com.ice.metadata.controllers.TrackController.getAllTracks()
+GET     /api/v1/tracks/:id       com.ice.metadata.controllers.TrackController.getTrack(id: java.util.UUID)
+POST    /api/v1/tracks           com.ice.metadata.controllers.TrackController.createTrack()
+PUT     /api/v1/tracks/:id       com.ice.metadata.controllers.TrackController.updateTrack(id: java.util.UUID)
+
+GET     /api/v1/albums           com.ice.metadata.controllers.AlbumController.getAllAlbums()
+GET     /api/v1/albums/:id       com.ice.metadata.controllers.AlbumController.getAlbum(id: java.util.UUID)
+POST    /api/v1/albums           com.ice.metadata.controllers.AlbumController.createAlbum()
+PUT     /api/v1/albums/:id       com.ice.metadata.controllers.AlbumController.updateAlbum(id: java.util.UUID)
+
+GET     /api/v1/artists                                   com.ice.metadata.controllers.ArtistController.getAllArtists()
+GET     /api/v1/artists/artist-of-the-day                    com.ice.metadata.controllers.ArtistController.getArtistOfTheDay()
+GET     /api/v1/artists/:id                               com.ice.metadata.controllers.ArtistController.getArtist(id: java.util.UUID)
+POST    /api/v1/artists                                   com.ice.metadata.controllers.ArtistController.createArtist()
+PUT     /api/v1/artists/:id                               com.ice.metadata.controllers.ArtistController.updateArtist(id: java.util.UUID)
+GET     /api/v1/artists/:artistId/tracks                  com.ice.metadata.controllers.ArtistController.getArtistTracks(artistId: java.util.UUID)
+
